@@ -1,0 +1,10 @@
+<section>
+  <% tagResult.tags.forEach(function(tag) { %>
+    <div class="bn_tags__tag">
+        <%if(tag.name.indexOf('nykund') >= 0){%>
+          <img class="bn_tags__unicorn" src="http://orig02.deviantart.net/3291/f/2016/106/d/a/da289ae9b727961d07a923d3bc9bc6d6-d9z5lwu.gif" width="50" height="50" />
+        <%} %>
+        <%= tag.name %> (<%= tag.count %>)
+    </div>
+  <% }); %>
+</section>

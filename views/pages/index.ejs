@@ -1,0 +1,27 @@
+<html>
+<head>
+  <meta http-equiv="refresh" content="8">
+  <% include ../partials/header.ejs %>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <section class="bn_container">
+    <div class="bn_chatboxes">
+        <% chats.forEach(function(chat) { %>
+          <div class='bn_chatbox'>
+            <div class="bn_chatbox__department <%= chat.departmentLogoClass %>"></div>
+              <% chat.messages.forEach((item, idx) => { %>
+              <time class="bn_chatbox__time"><%= item.timestamp %></time>
+              <div class="bn_chatbox__msg" data-message-index="<%= idx %>"><%= item.msg %></div>
+            <% }) %>
+          </div>
+        <% }); %>
+    </div>
+
+
+    <div class="bn_tags">
+        <% include ../partials/tags.ejs %>
+    </div>
+  </section>
+</body>
+</html>
