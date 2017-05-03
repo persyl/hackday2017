@@ -66,7 +66,9 @@ function getChats(fetchParams){
     const chats = [];
     for (let i = 0; i < 40; i++){
       var item = filteredChats[i];
-
+      if(!item){
+        continue;
+      }
       const chatModel = {
         agent : null,
         messages: item.history.filter(h => {
